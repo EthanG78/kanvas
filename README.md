@@ -58,11 +58,10 @@ application.
 ### Pre-requisites
 
 The [Kotlin tutorial](https://kotlinlang.org/docs/getting-started.html#learn-kotlin-fundamentals) only provides
-instructions using the Intelli-J IDE, making it difficult to know what exactly is required. This would be tough for
-headless environments, like CI. Nevertheless, the following is a semi-accurate list:
+instructions using the Intelli-J IDE.
+JetBrains' [Getting Started](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started) page for
+compose is better. Nevertheless, the following is a semi-accurate list:
 
 * Gradle (will be installed by Gradle Wrapper)
 * For native applications (compiled to binary), [kotlin-native](https://kotlinlang.org/docs/native-overview.html) (compiler)
 * For JVM applications, Java runtime environment (JRE), version 11
-
-### 
