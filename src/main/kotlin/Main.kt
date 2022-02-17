@@ -1,62 +1,73 @@
-// Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 import androidx.compose.material.MaterialTheme
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.mouseClickable
 import androidx.compose.material.Button
+import androidx.compose.material.Colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.input.pointer.*
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
-// @Preview(showBackground = true)
 @Composable
-fun CanvasDrawExample() {
-    Canvas(modifier = Modifier.fillMaxSize()) {
-        drawRect(Color.Blue, topLeft = Offset(0f, 0f), size = Size(this.size.width, 55f))
-        drawCircle(Color.Red, center = Offset(50f, 200f), radius = 40f)
-        drawLine(
-            Color.Green, Offset(20f, 0f),
-            Offset(200f, 200f), strokeWidth = 5f
-        )
+fun DrawKanvas() {
+    var positions by remember { mutableStateOf(listOf<Offset>()) }
 
-        drawArc(
-            Color.Black,
-            0f,
-            60f,
-            useCenter = true,
-            size = Size(300f, 300f),
-            topLeft = Offset(60f, 60f)
-        )
+    Canvas(modifier = Modifier
+        .fillMaxSize()
+        .pointerInput(Unit) {
+            awaitPointerEventScope {
+                while (true)
+                {
+                    val event = awaitPointerEvent();
+                    // Left mouse button draws a circle,
+                    // and right mouse button erases the canvas
+                    if (event.buttons.isPrimaryPressed) {
+                        positions = positions  + event.changes.first().position;
+                    } else if (event.buttons.isSecondaryPressed) {
+                        positions = emptyList();
+                    }
+                }
+            }
+        }) {
+
+        for (pos in positions)
+        {
+            drawCircle(
+                color = Color.Red,
+                radius = 5f,
+                center = pos
+            );
+        }
     }
 }
 
 @Composable
 @Preview
 fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
-
     MaterialTheme {
-        /*Button(onClick = {
-            text = "Hello, Desktop!"
-        }) {
-            Text(text)
-        }*/
 
-        CanvasDrawExample()
+        DrawKanvas();
+
     }
 }
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(onCloseRequest = ::exitApplication, title = "Kanvas")
+    {
         App()
     }
 }
