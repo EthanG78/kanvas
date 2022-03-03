@@ -22,10 +22,10 @@ class KanvasToolbar(private val title: String) {
             actions = {
                 // Put our drawing buttons here
                 // RowScope here, so these icons will be placed horizontally
-                IconButton(onClick = { /* doSomething() */ }) {
+                IconButton(onClick = { /* set the brush */ }) {
                     Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
                 }
-                IconButton(onClick = { /* doSomething() */ }) {
+                IconButton(onClick = { /* set another brush */ }) {
                     Icon(Icons.Filled.AccountBox, contentDescription = "Localized description")
                 }
             }

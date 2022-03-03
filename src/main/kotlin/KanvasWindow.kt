@@ -10,7 +10,7 @@ class KanvasWindow {
     fun renderWindow()
     {
         // Get the objects we want to display in the window
-        val toolbar = KanvasToolbar("Kanvas Drawing");
+        val toolbar = KanvasToolbar("Kanvas Brushes");
 
         MaterialTheme {
             Column() {
