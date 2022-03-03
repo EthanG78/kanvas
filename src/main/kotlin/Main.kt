@@ -17,10 +17,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.input.pointer.*
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+
+fun DrawScope.DrawBigCircle(pos: Offset): Unit {
+    drawCircle(
+        color = Color.Red,
+        radius = 5f,
+        center = pos,
+    );
+}
 
 @Composable
 fun DrawKanvas() {
@@ -43,14 +52,9 @@ fun DrawKanvas() {
                 }
             }
         }) {
-
         for (pos in positions)
         {
-            drawCircle(
-                color = Color.Red,
-                radius = 5f,
-                center = pos
-            );
+            DrawBigCircle(pos);
         }
     }
 }
