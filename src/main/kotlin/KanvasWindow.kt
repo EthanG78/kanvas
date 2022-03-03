@@ -11,8 +11,6 @@ class KanvasWindow {
     {
         // Get the objects we want to display in the window
         val toolbar = KanvasToolbar("Kanvas Drawing");
-        // Get singleton instance
-        val kanvas = Kanvas.instance;
 
         MaterialTheme {
             Column() {
