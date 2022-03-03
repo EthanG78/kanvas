@@ -37,3 +37,6 @@ the iterator pattern.
 
 **Decorator**
 The Compose Multi-platform SDK offers numerous decorators for their components.
+
+## First Iteration UML Diagram
+![UML Diagram](./data/Kanvas_UML_1.png)
