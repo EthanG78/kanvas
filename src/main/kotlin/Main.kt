@@ -23,17 +23,11 @@ import androidx.compose.ui.input.pointer.*
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
-fun DrawScope.DrawBigCircle(pos: Offset): Unit {
-    drawCircle(
-        color = Color.Red,
-        radius = 5f,
-        center = pos,
-    );
-}
-
+// DO WE NEED THIS ANYMORE???
 @Composable
 fun DrawKanvas() {
     var positions by remember { mutableStateOf(listOf<Offset>()) }
+    val brush = CircleBrush(5f);
 
     Canvas(modifier = Modifier
         .fillMaxSize()
@@ -54,7 +48,7 @@ fun DrawKanvas() {
         }) {
         for (pos in positions)
         {
-            DrawBigCircle(pos);
+            //brush.DrawBigCircle(pos);
         }
     }
 }
@@ -63,9 +57,9 @@ fun DrawKanvas() {
 @Preview
 fun App() {
     MaterialTheme {
-
         DrawKanvas();
-
+        val brush = CircleBrush(5f);
+        brush.DrawBigCircle(Offset(50f, 50f));
     }
 }
 
