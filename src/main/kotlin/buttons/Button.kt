@@ -1,9 +1,7 @@
 package buttons
 
-import androidx.compose.runtime.Composable
+import Renderable
 
-abstract class Button protected constructor() {
-    @Composable
-    abstract fun render();
+abstract class Button protected constructor() : Renderable {
     abstract fun handleClick();
 }

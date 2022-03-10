@@ -7,14 +7,15 @@ class KanvasWindow {
     // Returns a MaterialTheme with
     // all Window's elements to be rendered
     @Composable
-    fun renderWindow()
-    {
+    fun renderWindow() {
         // Get the objects we want to display in the window
         val toolbar = KanvasToolbar("Kanvas Brushes");
+        val canvas = KanvasKanvas();
 
         MaterialTheme {
             Column() {
-                toolbar.renderToolbar()
+                toolbar.render()
+                canvas.render()
             }
         }
     }

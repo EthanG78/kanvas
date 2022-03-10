@@ -3,15 +3,14 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import buttons.*
 
-class KanvasToolbar(private val title: String) {
+class KanvasToolbar(private val title: String) : Renderable {
     private val drawButton = DrawButton.getInstance();
     private val circleButton = CircleButton.getInstance();
     private val squareButton = SquareButton.getInstance();
     private val rectButton = RectButton.getInstance();
 
-
     @Composable
-    fun renderToolbar() {
+    override fun render() {
         TopAppBar(
             title = {
                 Row {
