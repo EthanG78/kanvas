@@ -9,7 +9,7 @@ import brushes.Brush
 import brushes.CircleBrush
 
 
-class CircleButton : Button() {
+class CircleButton : BrushButton() {
     companion object GetInstance {
         private val instance = CircleButton();
         fun getInstance(): CircleButton {
@@ -21,9 +21,14 @@ class CircleButton : Button() {
         return CircleBrush();
     }
 
+
+    override fun handleClick() {
+        println("circle button clicked");
+    }
+
     @Composable
     override fun render() {
-        return IconButton(onClick = { println("circle button clicked") }) {
+        return IconButton(onClick = { this.handleClick() }) {
             Icon(Icons.Filled.CheckCircle, contentDescription = "Localized description")
         }
     }

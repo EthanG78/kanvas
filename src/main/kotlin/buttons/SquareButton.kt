@@ -9,7 +9,7 @@ import brushes.Brush
 import brushes.RectBrush
 
 
-class SquareButton : Button() {
+class SquareButton : BrushButton() {
     companion object GetInstance {
         private val instance = SquareButton();
         fun getInstance(): SquareButton {
@@ -19,6 +19,10 @@ class SquareButton : Button() {
 
     override fun createBrush(): Brush {
         return RectBrush();
+    }
+
+    override fun handleClick() {
+        println("square button clicked");
     }
 
     @Composable

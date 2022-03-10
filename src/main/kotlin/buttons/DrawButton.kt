@@ -9,7 +9,7 @@ import brushes.Brush
 import brushes.DrawBrush
 
 
-class DrawButton : Button() {
+class DrawButton : BrushButton() {
     companion object GetInstance {
         private val instance = DrawButton();
         fun getInstance(): DrawButton {
@@ -21,9 +21,13 @@ class DrawButton : Button() {
         return DrawBrush();
     }
 
+    override fun handleClick() {
+        println("draw button clicked");
+    }
+
     @Composable
     override fun render() {
-        return IconButton(onClick = { println("draw button clicked") }) {
+        return IconButton(onClick = { this.handleClick() }) {
             Icon(Icons.Filled.Lock, contentDescription = "Localized description")
         }
     }

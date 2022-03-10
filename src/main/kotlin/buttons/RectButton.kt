@@ -9,7 +9,7 @@ import brushes.Brush
 import brushes.RectBrush
 
 
-class RectButton : Button() {
+class RectButton : BrushButton() {
     companion object GetInstance {
         private val instance = RectButton();
         fun getInstance(): RectButton {
@@ -21,9 +21,13 @@ class RectButton : Button() {
         return RectBrush();
     }
 
+    override fun handleClick() {
+        println("rect button clicked");
+    }
+
     @Composable
     override fun render() {
-        return IconButton(onClick = { println("rect button clicked") }) {
+        return IconButton(onClick = { this.handleClick() }) {
             Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
         }
     }
