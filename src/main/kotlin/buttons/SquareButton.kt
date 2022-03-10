@@ -8,13 +8,15 @@ import androidx.compose.runtime.Composable
 
 
 class SquareButton : Button() {
-    private val instance = SquareButton();
-    override fun getInstance(): Button {
-        return this.instance;
+    companion object GetInstance {
+        private val instance = SquareButton();
+        fun getInstance(): SquareButton {
+            return instance;
+        }
     }
 
     @Composable
-    override fun composable() {
+    override fun render() {
         return IconButton(onClick = { println("square button clicked") }) {
             Icon(Icons.Filled.Home, contentDescription = "Localized description")
         }

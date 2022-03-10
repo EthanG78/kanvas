@@ -8,13 +8,15 @@ import androidx.compose.runtime.Composable
 
 
 class RectButton : Button() {
-    private val instance = RectButton();
-    override fun getInstance(): Button {
-        return this.instance;
+    companion object GetInstance {
+        private val instance = RectButton();
+        fun getInstance(): RectButton {
+            return instance;
+        }
     }
 
     @Composable
-    override fun composable() {
+    override fun render() {
         return IconButton(onClick = { println("rect button clicked") }) {
             Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
         }

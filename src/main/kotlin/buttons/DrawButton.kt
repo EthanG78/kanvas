@@ -8,13 +8,15 @@ import androidx.compose.runtime.Composable
 
 
 class DrawButton : Button() {
-    private val instance = DrawButton();
-    override fun getInstance(): Button {
-        return this.instance;
+    companion object GetInstance {
+        private val instance = DrawButton();
+        fun getInstance(): DrawButton {
+            return instance;
+        }
     }
 
     @Composable
-    override fun composable() {
+    override fun render() {
         return IconButton(onClick = { println("draw button clicked") }) {
             Icon(Icons.Filled.Lock, contentDescription = "Localized description")
         }

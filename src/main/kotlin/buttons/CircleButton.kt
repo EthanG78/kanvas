@@ -8,13 +8,15 @@ import androidx.compose.runtime.Composable
 
 
 class CircleButton : Button() {
-    private val instance = CircleButton();
-    override fun getInstance(): Button {
-        return this.instance;
+    companion object GetInstance {
+        private val instance = CircleButton();
+        fun getInstance(): CircleButton {
+            return instance;
+        }
     }
 
     @Composable
-    override fun composable() {
+    override fun render() {
         return IconButton(onClick = { println("circle button clicked") }) {
             Icon(Icons.Filled.CheckCircle, contentDescription = "Localized description")
         }
