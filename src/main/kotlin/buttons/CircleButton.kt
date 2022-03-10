@@ -5,6 +5,8 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.runtime.Composable
+import brushes.Brush
+import brushes.CircleBrush
 
 
 class CircleButton : Button() {
@@ -13,6 +15,10 @@ class CircleButton : Button() {
         fun getInstance(): CircleButton {
             return instance;
         }
+    }
+
+    override fun createBrush(): Brush {
+        return CircleBrush();
     }
 
     @Composable

@@ -5,6 +5,8 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
+import brushes.Brush
+import brushes.DrawBrush
 
 
 class DrawButton : Button() {
@@ -13,6 +15,10 @@ class DrawButton : Button() {
         fun getInstance(): DrawButton {
             return instance;
         }
+    }
+
+    override fun createBrush(): Brush {
+        return DrawBrush();
     }
 
     @Composable

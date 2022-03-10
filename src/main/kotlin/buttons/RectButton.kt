@@ -5,6 +5,8 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
+import brushes.Brush
+import brushes.RectBrush
 
 
 class RectButton : Button() {
@@ -13,6 +15,10 @@ class RectButton : Button() {
         fun getInstance(): RectButton {
             return instance;
         }
+    }
+
+    override fun createBrush(): Brush {
+        return RectBrush();
     }
 
     @Composable
