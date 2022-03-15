@@ -1,21 +1,18 @@
 package brushes
 
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 
 class DrawBrush : Brush {
     private var width: Int = 1;
-    private var color: Color = Color.Black;
 
     fun setWidth(width: Int) {
         this.width = width;
     }
 
-    fun setColor(color: Color) {
-        this.color = color;
-    }
-
-    override fun draw(): Mark {
+    override fun DrawScope.draw(color: Color, pos: Offset) {
         // return a drawing mark
-        return Mark();
+        return ;
     }
 }
