@@ -5,14 +5,19 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import brushes.Brush
 import brushes.RectBrush
+import org.w3c.dom.css.Rect
 
 
 class SquareButton : BrushButton() {
+    private var drawBrush: MutableState<Brush>? = null;
+
     companion object GetInstance {
         private val instance = SquareButton();
-        fun getInstance(): SquareButton {
+        fun getInstance(drawBrush: MutableState<Brush>): SquareButton {
+            instance.drawBrush = drawBrush;
             return instance;
         }
     }
@@ -22,12 +27,21 @@ class SquareButton : BrushButton() {
     }
 
     override fun handleClick() {
+        // TODO: Hardcoded, will be configured in future
+
+        val width = 25.0f;
+        val newBrush: RectBrush = createBrush() as RectBrush;
+        newBrush.setRectWidth(width);
+        newBrush.setRectHeight(width);
+
+        instance.drawBrush?.value = newBrush;
+
         println("square button clicked");
     }
 
     @Composable
     override fun render() {
-        return IconButton(onClick = { println("square button clicked") }) {
+        return IconButton(onClick = { this.handleClick() }) {
             Icon(Icons.Filled.Home, contentDescription = "Localized description")
         }
     }

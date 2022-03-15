@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 class DrawBrush : Brush {
     private var width: Int = 1;
 
-    fun setWidth(width: Int) {
+    fun setDrawWidth(width: Int) {
         this.width = width;
     }
 

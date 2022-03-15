@@ -6,14 +6,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 
 class RectBrush : Brush {
-    private var width: Float = 1.0f;
-    private var height: Float = 1.0f;
+    private var width: Float = 10f;
+    private var height: Float = 10f;
 
-    fun setWidth(width: Float) {
+    fun setRectWidth(width: Float) {
         this.width = width;
     }
 
-    fun setHeight(height: Float) {
+    fun setRectHeight(height: Float) {
         this.height = height;
     }
 

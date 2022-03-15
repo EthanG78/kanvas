@@ -5,7 +5,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 
 class CircleBrush : Brush {
-    var radius: Float = 10.0f;
+    private var radius: Float = 10.0f;
 
     // had to change from setRadius, because it apparently clashes with a signature in the JVM..idk
     fun setCircleRadius(radius: Float) {
