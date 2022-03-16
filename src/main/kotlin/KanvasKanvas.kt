@@ -4,39 +4,44 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.isPrimaryPressed
 import androidx.compose.ui.input.pointer.isSecondaryPressed
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.runtime.*
 import brushes.Brush
+import marks.Mark
 
-class KanvasKanvas(private var drawColor: MutableState<Color>, private var drawBrush: MutableState<Brush>) : Renderable {
+class KanvasKanvas(private var selectedColor: MutableState<Color>, private var selectedBrush: MutableState<Brush>) :
+    Renderable {
     // TODO: need a way to edit the selected brush's properties - like a dialog pops up on all of the BrushButtons
     // with their respective propertied when double clicked
 
     @Composable
     override fun render() {
-        var positions by remember { mutableStateOf(listOf<Offset>()) }
+        var marks by remember { mutableStateOf(listOf<Mark>()) }
 
         return Canvas(modifier = Modifier.fillMaxSize().pointerInput(Unit) {
             awaitPointerEventScope {
+                var drawing = false
                 while (true) {
                     val event = awaitPointerEvent();
                     if (event.buttons.isPrimaryPressed) {
-                        positions = positions + event.changes.first().position;
+                        drawing = true
+                        marks = marks + selectedBrush.value.stroke(selectedColor.value, event.changes.first().position)
                     } else if (event.buttons.isSecondaryPressed) {
-                        positions = emptyList();
+                        marks = emptyList();
+                    } else if (drawing) {
+                        selectedBrush.value.finishStroke()
+                        drawing = false
                     }
 
                 }
             }
         }) {
-            positions.forEach {
-                //drawBrush.draw(drawColor, it);
-                with( drawBrush.value ) {
-                    draw(drawColor.value, it);
+            marks.forEach {
+                with(it) {
+                    draw();
                 }
             }
         };

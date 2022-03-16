@@ -15,12 +15,12 @@ class KanvasWindow {
 
         // Default hard coded values
         val defaultBrush: Brush = CircleBrush();
-        val drawColor = remember { mutableStateOf(Color.Red) }
-        val drawBrush = remember { mutableStateOf(defaultBrush) }
+        val selectedColor = remember { mutableStateOf(Color.Red) }
+        val selectedBrush = remember { mutableStateOf(defaultBrush) }
 
         // Get the objects we want to display in the window
-        val toolbar = KanvasToolbar("Kanvas Brushes", drawBrush);
-        val canvas = KanvasKanvas(drawColor, drawBrush);
+        val toolbar = KanvasToolbar("Kanvas Brushes", selectedBrush);
+        val canvas = KanvasKanvas(selectedColor, selectedBrush);
 
         MaterialTheme {
             Column() {

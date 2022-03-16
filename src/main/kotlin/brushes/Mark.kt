@@ -1,4 +1,0 @@
-package brushes
-
-class Mark {
-}

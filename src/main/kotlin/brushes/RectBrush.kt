@@ -1,13 +1,14 @@
 package brushes
 
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.DrawScope
+import marks.Mark
+import marks.RectMark
 
-class RectBrush : Brush {
+class RectBrush : BaseBrush() {
     private var width: Float = 10f;
     private var height: Float = 10f;
+    private var currentMark: Mark? = null
 
     fun setRectWidth(width: Float) {
         this.width = width;
@@ -17,12 +18,7 @@ class RectBrush : Brush {
         this.height = height;
     }
 
-    override fun DrawScope.draw(color: Color, pos: Offset) {
-        // return a drawing rect
-        this.drawRect(
-            color = color,
-            size = Size(width = width, height = height),
-            topLeft = pos
-        )
+    override fun createMark(color: Color, pos: Offset): Mark {
+        return RectMark(color, pos, width, height)
     }
 }

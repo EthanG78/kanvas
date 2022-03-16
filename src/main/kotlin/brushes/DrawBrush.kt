@@ -2,17 +2,19 @@ package brushes
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.DrawScope
+import marks.CircleMark
+import marks.ContinuousMark
+import marks.Mark
 
-class DrawBrush : Brush {
-    private var width: Int = 1;
+class DrawBrush : BaseBrush() {
+    private var width: Float = 1.0F
 
-    fun setDrawWidth(width: Int) {
+    fun setDrawWidth(width: Float) {
         this.width = width;
     }
 
-    override fun DrawScope.draw(color: Color, pos: Offset) {
-        // return a drawing mark
-        return ;
+    override fun createMark(color: Color, pos: Offset): Mark {
+        println("CREATING CONINUEOUS")
+        return ContinuousMark(CircleMark(color, pos, width))
     }
 }

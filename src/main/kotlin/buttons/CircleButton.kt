@@ -6,14 +6,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import brushes.BaseBrush
 import brushes.Brush
 import brushes.CircleBrush
-import brushes.RectBrush
 
 
 class CircleButton : BrushButton() {
-    private var drawBrush: MutableState<Brush>? = null;
-
     companion object GetInstance {
         private val instance = CircleButton();
         fun getInstance(drawBrush: MutableState<Brush>): CircleButton {

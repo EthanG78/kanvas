@@ -2,9 +2,10 @@ package brushes
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.DrawScope
+import marks.CircleMark
+import marks.Mark
 
-class CircleBrush : Brush {
+class CircleBrush : BaseBrush() {
     private var radius: Float = 10.0f;
 
     // had to change from setRadius, because it apparently clashes with a signature in the JVM..idk
@@ -12,12 +13,7 @@ class CircleBrush : Brush {
         this.radius = radius;
     }
 
-    override fun DrawScope.draw(color: Color, pos: Offset) {
-        // return a circle mark
-        this.drawCircle(
-            color = color,
-            radius = radius,
-            center = pos,
-        );
+    override fun createMark(color: Color, pos: Offset): Mark {
+        return CircleMark(color, pos, radius);
     }
 }

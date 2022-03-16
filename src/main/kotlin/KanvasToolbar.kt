@@ -3,12 +3,10 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import brushes.Brush
-import brushes.CircleBrush
-import brushes.RectBrush
 import buttons.*
 
 class KanvasToolbar(private val title: String, private var drawBrush: MutableState<Brush>) : Renderable {
-    private val drawButton = DrawButton.getInstance();
+    private val drawButton = DrawButton.getInstance(drawBrush);
     private val circleButton = CircleButton.getInstance(drawBrush);
     private val squareButton = SquareButton.getInstance(drawBrush);
     private val rectButton = RectButton.getInstance(drawBrush);

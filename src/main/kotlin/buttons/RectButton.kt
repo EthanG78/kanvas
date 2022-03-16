@@ -6,13 +6,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import brushes.BaseBrush
 import brushes.Brush
 import brushes.RectBrush
 
 
 class RectButton : BrushButton() {
-    private var drawBrush: MutableState<Brush>? = null;
-
     companion object GetInstance {
         private val instance = RectButton();
         fun getInstance(drawBrush: MutableState<Brush>): RectButton {
