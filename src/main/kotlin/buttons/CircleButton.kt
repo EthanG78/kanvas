@@ -25,12 +25,7 @@ class CircleButton : BrushButton() {
     }
 
     override fun handleClick() {
-        // TODO: Hardcoded, will be configured in future
-
-        val radius = 25.0f;
         val newBrush: CircleBrush = createBrush() as CircleBrush;
-        newBrush.setCircleRadius(radius);
-
         instance.drawBrush?.value = newBrush;
     }
 

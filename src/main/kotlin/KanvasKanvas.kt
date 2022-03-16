@@ -28,7 +28,7 @@ class KanvasKanvas(private var selectedColor: MutableState<Color>, private var s
                     val event = awaitPointerEvent();
                     if (event.buttons.isPrimaryPressed) {
                         drawing = true
-                        marks = marks + selectedBrush.value.stroke(selectedColor.value, event.changes.first().position)
+                        marks = marks + selectedBrush.value.stroke(event.changes.first().position)
                     } else if (event.buttons.isSecondaryPressed) {
                         marks = emptyList();
                     } else if (drawing) {

@@ -26,10 +26,7 @@ class DrawButton : BrushButton() {
     }
 
     override fun handleClick() {
-        val radius = 25.0f;
         val newBrush = createBrush() as DrawBrush;
-        newBrush.setDrawWidth(radius);
-
         DrawButton.instance.drawBrush?.value = newBrush;
     }
 

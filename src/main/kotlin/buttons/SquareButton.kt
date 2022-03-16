@@ -25,13 +25,7 @@ class SquareButton : BrushButton() {
     }
 
     override fun handleClick() {
-        // TODO: Hardcoded, will be configured in future
-
-        val width = 25.0f;
         val newBrush: RectBrush = createBrush() as RectBrush;
-        newBrush.setRectWidth(width);
-        newBrush.setRectHeight(width);
-
         instance.drawBrush?.value = newBrush;
     }
 
