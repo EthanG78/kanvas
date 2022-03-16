@@ -26,7 +26,6 @@ class RectButton : BrushButton() {
 
     override fun handleClick() {
         // TODO: Hardcoded, will be configured in future
-
         val width = 25.0f;
         val height = 50.0f;
         val newBrush: RectBrush = createBrush() as RectBrush;
@@ -34,8 +33,6 @@ class RectButton : BrushButton() {
         newBrush.setRectHeight(height);
 
         instance.drawBrush?.value = newBrush;
-
-        println("rect button clicked");
     }
 
     @Composable

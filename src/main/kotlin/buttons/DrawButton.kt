@@ -22,7 +22,6 @@ class DrawButton : BrushButton() {
     }
 
     override fun createBrush(): Brush {
-        println("creating draw brush")
         return DrawBrush();
     }
 
@@ -32,8 +31,6 @@ class DrawButton : BrushButton() {
         newBrush.setDrawWidth(radius);
 
         DrawButton.instance.drawBrush?.value = newBrush;
-
-        println("draw button clicked");
     }
 
     @Composable

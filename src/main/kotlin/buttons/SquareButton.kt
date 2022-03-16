@@ -33,8 +33,6 @@ class SquareButton : BrushButton() {
         newBrush.setRectHeight(width);
 
         instance.drawBrush?.value = newBrush;
-
-        println("square button clicked");
     }
 
     @Composable

@@ -2,6 +2,7 @@ package marks
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 
 class LineMark(color: Color, private var start: Offset, end: Offset, private var width: Float) :
@@ -11,7 +12,6 @@ class LineMark(color: Color, private var start: Offset, end: Offset, private var
     }
 
     override fun applyStroke(pos: Offset) {
-        println("stroking line")
         if (pos != this.pos) {
             this.start = this.pos;
             this.pos = pos;
@@ -19,8 +19,7 @@ class LineMark(color: Color, private var start: Offset, end: Offset, private var
     }
 
     override fun DrawScope.draw() {
-        println("drawing line")
-        this.drawLine(color, start, pos, width)
+        drawLine(color, start, pos, width, cap= StrokeCap.Round)
     }
 
     override fun clone(): LineMark {

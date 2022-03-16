@@ -11,7 +11,7 @@ open class ContinuousMark(startMark: SingleMark) : Mark {
     }
 
     override fun applyStroke(pos: Offset) {
-        if ((marks.last().getPosition() - pos).getDistance() > 0) {
+        if ((marks.last().getPosition() - pos).getDistance() > 10) {
             val newMark = marks.last().clone()
             newMark.applyStroke(pos)
             marks.add(newMark)

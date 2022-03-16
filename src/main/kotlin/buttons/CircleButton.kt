@@ -32,8 +32,6 @@ class CircleButton : BrushButton() {
         newBrush.setCircleRadius(radius);
 
         instance.drawBrush?.value = newBrush;
-
-        println("circle button clicked");
     }
 
     @Composable
