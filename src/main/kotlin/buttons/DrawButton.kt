@@ -33,7 +33,7 @@ class DrawButton : BrushButton() {
 
         DrawButton.instance.drawBrush?.value = newBrush;
 
-        println("circle button clicked");
+        println("draw button clicked");
     }
 
     @Composable

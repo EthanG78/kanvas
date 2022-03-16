@@ -13,7 +13,7 @@ abstract class BaseBrush : Brush {
         if (currentMark == null) {
             currentMark = this.createMark(color, pos)
         } else {
-            (currentMark as Mark).stroke(pos);
+            (currentMark as Mark).applyStroke(pos);
         }
         return (currentMark as Mark);
     }
