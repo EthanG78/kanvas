@@ -3,10 +3,9 @@ package buttons
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import brushes.BaseBrush
 import brushes.Brush
 import brushes.CircleBrush
 
@@ -32,7 +31,7 @@ class CircleButton : BrushButton() {
     @Composable
     override fun render() {
         return IconButton(onClick = { this.handleClick() }) {
-            Icon(Icons.Filled.CheckCircle, contentDescription = "Localized description")
+            Icon(Icons.Filled.AddCircle, contentDescription = "Localized description")
         }
     }
 }
