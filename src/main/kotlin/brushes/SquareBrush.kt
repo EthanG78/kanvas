@@ -1,0 +1,4 @@
+package brushes
+
+class SquareBrush {
+}
