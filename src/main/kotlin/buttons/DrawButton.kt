@@ -16,7 +16,7 @@ class DrawButton : BrushButton() {
     companion object GetInstance {
         private val instance = DrawButton();
         fun getInstance(drawBrush: MutableState<Brush>): DrawButton {
-            DrawButton.instance.drawBrush = drawBrush;
+            instance.drawBrush = drawBrush;
             return instance;
         }
     }
@@ -27,7 +27,7 @@ class DrawButton : BrushButton() {
 
     override fun handleClick() {
         val newBrush = createBrush() as DrawBrush;
-        DrawButton.instance.drawBrush?.value = newBrush;
+        instance.drawBrush?.value = newBrush;
     }
 
     @Composable

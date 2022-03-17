@@ -24,8 +24,7 @@ class CircleButton : BrushButton() {
     }
 
     override fun handleClick() {
-        val newBrush: CircleBrush = createBrush() as CircleBrush;
-        instance.drawBrush?.value = newBrush;
+        instance.drawBrush?.value = createBrush()
     }
 
     @Composable

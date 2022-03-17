@@ -25,8 +25,7 @@ class RectButton : BrushButton() {
     }
 
     override fun handleClick() {
-        val newBrush: RectBrush = createBrush() as RectBrush;
-        instance.drawBrush?.value = newBrush;
+        instance.drawBrush?.value = createBrush()
     }
 
     @Composable

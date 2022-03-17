@@ -7,6 +7,6 @@ import marks.Mark
 
 class LineBrush : BaseBrush() {
     override fun createMark(color: Color, pos: Offset): Mark {
-        return LineMark(color, pos, brushSize);
+        return LineMark(color, pos, pos, brushSize);
     }
 }

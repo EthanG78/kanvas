@@ -57,6 +57,7 @@ private class DropDown<T>(
 
 class KanvasToolbar(private val title: String, private var drawBrush: MutableState<Brush>) : Renderable {
     private val drawButton = DrawButton.getInstance(drawBrush);
+    private val lineButton = LineButton.getInstance(drawBrush);
     private val circleButton = CircleButton.getInstance(drawBrush);
     private val squareButton = SquareButton.getInstance(drawBrush);
     private val rectButton = RectButton.getInstance(drawBrush);
@@ -92,6 +93,7 @@ class KanvasToolbar(private val title: String, private var drawBrush: MutableSta
                 colorDrop.render()
                 Spacer(modifier = Modifier.width(10.dp))
                 drawButton.render()
+                lineButton.render()
                 circleButton.render()
                 squareButton.render()
                 rectButton.render()

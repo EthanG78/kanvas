@@ -6,9 +6,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import brushes.BaseBrush
 import brushes.Brush
-import brushes.RectBrush
+import brushes.SquareBrush
 
 
 class SquareButton : BrushButton() {
@@ -21,12 +20,11 @@ class SquareButton : BrushButton() {
     }
 
     override fun createBrush(): Brush {
-        return RectBrush();
+        return SquareBrush();
     }
 
     override fun handleClick() {
-        val newBrush: RectBrush = createBrush() as RectBrush;
-        instance.drawBrush?.value = newBrush;
+        instance.drawBrush?.value = createBrush()
     }
 
     @Composable

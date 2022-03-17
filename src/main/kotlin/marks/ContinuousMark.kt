@@ -19,7 +19,7 @@ open class ContinuousMark(startMark: SingleMark) : Mark {
     }
 
     override fun DrawScope.draw() {
-        marks.forEach {
+        marks.slice(1 until marks.size).forEach {
             with(it) {
                 draw();
             }

@@ -7,25 +7,24 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import brushes.Brush
-import brushes.TriangleBrush
+import brushes.LineBrush
 
 
-class TriangleButton : BrushButton() {
+class LineButton : BrushButton() {
     companion object GetInstance {
-        private val instance = TriangleButton();
-        fun getInstance(drawBrush: MutableState<Brush>): TriangleButton {
+        private val instance = LineButton();
+        fun getInstance(drawBrush: MutableState<Brush>): LineButton {
             instance.drawBrush = drawBrush;
             return instance;
         }
     }
 
     override fun createBrush(): Brush {
-        return TriangleBrush();
+        return LineBrush();
     }
 
     override fun handleClick() {
-        val newBrush: TriangleBrush = createBrush() as TriangleBrush
-        instance.drawBrush?.value = newBrush;
+        instance.drawBrush?.value = createBrush()
     }
 
     @Composable
