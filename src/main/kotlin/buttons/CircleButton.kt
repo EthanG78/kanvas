@@ -2,13 +2,12 @@ package buttons
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import brushes.Brush
 import brushes.CircleBrush
-
+import compose.icons.FeatherIcons
+import compose.icons.feathericons.Circle
 
 class CircleButton : BrushButton() {
     companion object GetInstance {
@@ -30,7 +29,7 @@ class CircleButton : BrushButton() {
     @Composable
     override fun render() {
         return IconButton(onClick = { this.handleClick() }) {
-            Icon(Icons.Filled.AddCircle, contentDescription = "Localized description")
+            Icon(FeatherIcons.Circle, contentDescription = "Localized description")
         }
     }
 }

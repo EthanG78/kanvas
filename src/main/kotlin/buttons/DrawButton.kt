@@ -2,14 +2,12 @@ package buttons
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import brushes.BaseBrush
+import compose.icons.FeatherIcons
 import brushes.Brush
-import brushes.CircleBrush
 import brushes.DrawBrush
+import compose.icons.feathericons.Edit
 
 
 class DrawButton : BrushButton() {
@@ -33,7 +31,7 @@ class DrawButton : BrushButton() {
     @Composable
     override fun render() {
         return IconButton(onClick = { this.handleClick() }) {
-            Icon(Icons.Filled.Lock, contentDescription = "Localized description")
+            Icon(FeatherIcons.Edit, contentDescription = "Localized description")
         }
     }
 }

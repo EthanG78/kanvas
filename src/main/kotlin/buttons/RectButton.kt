@@ -2,13 +2,12 @@ package buttons
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import brushes.BaseBrush
 import brushes.Brush
 import brushes.RectBrush
+import compose.icons.FeatherIcons
+import compose.icons.feathericons.MinusSquare
 
 
 class RectButton : BrushButton() {
@@ -31,7 +30,7 @@ class RectButton : BrushButton() {
     @Composable
     override fun render() {
         return IconButton(onClick = { this.handleClick() }) {
-            Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
+            Icon(FeatherIcons.MinusSquare, contentDescription = "Localized description")
         }
     }
 }

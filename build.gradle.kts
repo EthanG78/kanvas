@@ -11,13 +11,14 @@ group = "me.ethang"
 version = "1.0"
 
 repositories {
-    google()
     mavenCentral()
+    google()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 dependencies {
     implementation(compose.desktop.currentOs)
+    implementation("br.com.devsrsouza.compose.icons.jetbrains:feather:1.0.0")
 }
 
 tasks.withType<KotlinCompile> {

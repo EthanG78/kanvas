@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import brushes.Brush
 import brushes.LineBrush
+import compose.icons.FeatherIcons
+import compose.icons.feathericons.Maximize2
 
 
 class LineButton : BrushButton() {
@@ -30,7 +32,7 @@ class LineButton : BrushButton() {
     @Composable
     override fun render() {
         return IconButton(onClick = { this.handleClick() }) {
-            Icon(Icons.Filled.KeyboardArrowUp, contentDescription = "Localized description")
+            Icon(FeatherIcons.Maximize2, contentDescription = "Localized description")
         }
     }
 }
