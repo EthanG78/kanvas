@@ -69,10 +69,11 @@ class KanvasToolbar(private val icon: ImageVector, private val title: String, pr
             Pair(Color.Blue, "Blue"),
             Pair(Color.Cyan, "Cyan"),
             Pair(Color.Green, "Green"),
+            Pair(Color.Gray, "Gray"),
             Pair(Color.Magenta, "Magenta"),
             Pair(Color.Yellow, "Yellow")
         ).map { Pair(it.first, "${it.second}  0x${it.first.value.toString(16)}") }
-    private val brushSizes = listOf(2.0F, 5.0F, 10.0F, 25.0F).map { Pair(it, "$it Pt.") }
+    private val brushSizes = listOf(2F, 5F, 10F, 25F, 35F, 40F).map { Pair(it, "$it Pt.") }
     private val colorDrop = DropDown("Brush Color", colors) { color -> drawBrush.value.setColor(color) }
     private val sizeDrop = DropDown("Brush Size", brushSizes) { size -> drawBrush.value.setSize(size) }
 

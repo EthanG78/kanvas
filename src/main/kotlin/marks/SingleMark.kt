@@ -10,7 +10,7 @@ abstract class SingleMark(protected var color: Color, protected var pos: Offset)
         }
     }
 
-    fun getPosition(): Offset {
+    override fun getPosition(): Offset {
         return this.pos;
     }
 }

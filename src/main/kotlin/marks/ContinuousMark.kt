@@ -3,8 +3,8 @@ package marks
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.DrawScope
 
-open class ContinuousMark(startMark: SingleMark) : Mark {
-    protected var marks = ArrayList<SingleMark>();
+open class ContinuousMark(startMark: Mark) : Mark {
+    protected var marks = ArrayList<Mark>();
 
     init {
         marks += startMark
@@ -26,4 +26,13 @@ open class ContinuousMark(startMark: SingleMark) : Mark {
         }
     }
 
+    override fun getPosition(): Offset {
+        return marks.first().getPosition()
+    }
+
+    override fun clone(): Mark {
+        val cloned = ContinuousMark(this.marks.first().clone())
+        cloned.marks = this.marks.slice(1 until marks.size).map { it.clone() } as ArrayList<Mark>
+        return cloned
+    }
 }
