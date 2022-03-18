@@ -17,14 +17,13 @@ class KanvasWindow {
 
         // Default hard coded values
         val defaultBrush: Brush = CircleBrush();
-        val selectedColor = remember { mutableStateOf(Color.Red) }
         val selectedBrush = remember { mutableStateOf(defaultBrush) }
 
         // Get the objects we want to display in the window
         // Using the Kotlin logo as the 'K' in the title
         val icon = SimpleIcons.Kotlin
         val toolbar = KanvasToolbar(icon, "anvas Brushes", selectedBrush);
-        val canvas = KanvasKanvas(selectedColor, selectedBrush);
+        val canvas = KanvasKanvas(selectedBrush);
 
         MaterialTheme {
             Column() {

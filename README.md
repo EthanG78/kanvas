@@ -1,14 +1,8 @@
-# kanvas
+# Kanvas
 
-## Concept
+Kanvas is a minimal Microsoft Paint like utility that provides users with the ability to easily draw lines and shapes of different colors and sizes. The application presents users with a blank white canvas and provides them with various drawing tools that can be used to add detail to their canvas.
 
-Small MS-paint like utility that provides users with the ability to create
-diagrams and drawings with ease.
-
-The application will present the user with a canvas and various drawing tools.
-Any of the drawing tools can be used to add detail to their canvas. For
-example, there will be shapes that users can place onto their canvas, or they
-can select a basic pen.
+![demo](./data/demo_screenshot.png)
 
 ## Tentative Design Patterns
 
@@ -53,11 +47,6 @@ All of the applications commands, like save, undo, redo, etc. can use the Comman
 Use when implementing undo, redo, and possibly loading an existing project. Could be useful when saving the state of the
 application.
 
-## First Iteration UML Diagram
-![UML Diagram](./data/Kanvas_UML_1.png)
-
-## Contributing
-
 ### Pre-requisites
 
 The [Kotlin tutorial](https://kotlinlang.org/docs/getting-started.html#learn-kotlin-fundamentals) only provides
@@ -68,3 +57,7 @@ compose is better. Nevertheless, the following is a semi-accurate list:
 * Gradle (will be installed by Gradle Wrapper)
 * For native applications (compiled to binary), [kotlin-native](https://kotlinlang.org/docs/native-overview.html) (compiler)
 * For JVM applications, Java runtime environment (JRE), version 11
+
+### Authors
+- Justen Di Ruscio
+- Ethan Garnier
