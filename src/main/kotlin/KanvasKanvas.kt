@@ -12,11 +12,8 @@ import androidx.compose.runtime.*
 import brushes.Brush
 import marks.Mark
 
-class KanvasKanvas(private var selectedColor: MutableState<Color>, private var selectedBrush: MutableState<Brush>) :
+class KanvasKanvas(private var selectedBrush: MutableState<Brush>) :
     Renderable {
-    // TODO: need a way to edit the selected brush's properties - like a dialog pops up on all of the BrushButtons
-    // with their respective propertied when double clicked
-
     @Composable
     override fun render() {
         var marks by remember { mutableStateOf(listOf<Mark>()) }
