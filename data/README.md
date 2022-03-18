@@ -1,6 +1,6 @@
 # Kanvas Data
 
-This folder contains the UML diagrams that were constructed throughout development of Kanvas.
+This folder contains the UML diagrams that were constructed throughout development of Kanvas, as well as any screenshot or images used through the repo and its documents.
 
 ### First Iteration UML Diagram
 The first iteration UML Diagram of Kanvas captures the planning stage of our development. This diagram was used as a foundation for our first commits to the project, as well as a guideline for what features we wanted to implement and what design patterns we were going to use to implement them. Some information portrayed within the diagram did not make it into the current version of Kanvas, as is reflected within our second iteration UML Diagram.

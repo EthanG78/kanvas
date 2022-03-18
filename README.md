@@ -2,6 +2,8 @@
 
 Kanvas is a minimal Microsoft Paint like utility that provides users with the ability to easily draw lines and shapes of different colors and sizes. The application presents users with a blank white canvas and provides them with various drawing tools that can be used to add detail to their canvas.
 
+![demo](./data/demo_screenshot.png)
+
 ## Tentative Design Patterns
 
 **Singleton**
