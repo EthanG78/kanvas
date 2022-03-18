@@ -5,6 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import brushes.*
+import compose.icons.SimpleIcons
+import compose.icons.simpleicons.Kotlin
 
 class KanvasWindow {
 
@@ -19,7 +21,9 @@ class KanvasWindow {
         val selectedBrush = remember { mutableStateOf(defaultBrush) }
 
         // Get the objects we want to display in the window
-        val toolbar = KanvasToolbar("Kanvas Brushes", selectedBrush);
+        // Using the Kotlin logo as the 'K' in the title
+        val icon = SimpleIcons.Kotlin
+        val toolbar = KanvasToolbar(icon, "anvas Brushes", selectedBrush);
         val canvas = KanvasKanvas(selectedColor, selectedBrush);
 
         MaterialTheme {

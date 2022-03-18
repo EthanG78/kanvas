@@ -5,6 +5,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusTarget
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -55,7 +56,7 @@ private class DropDown<T>(
 }
 
 
-class KanvasToolbar(private val title: String, private var drawBrush: MutableState<Brush>) : Renderable {
+class KanvasToolbar(private val icon: ImageVector, private val title: String, private var drawBrush: MutableState<Brush>) : Renderable {
     private val drawButton = DrawButton.getInstance(drawBrush);
     private val lineButton = LineButton.getInstance(drawBrush);
     private val circleButton = CircleButton.getInstance(drawBrush);
@@ -80,8 +81,7 @@ class KanvasToolbar(private val title: String, private var drawBrush: MutableSta
         TopAppBar(
             title = {
                 Row {
-                    // we can put ANY composable object here
-                    // keep this in mind
+                    Icon(imageVector = icon, "App Logo")
                     Text(text = title)
                 }
             },

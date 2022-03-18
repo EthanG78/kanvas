@@ -19,6 +19,7 @@ repositories {
 dependencies {
     implementation(compose.desktop.currentOs)
     implementation("br.com.devsrsouza.compose.icons.jetbrains:feather:1.0.0")
+    implementation("br.com.devsrsouza.compose.icons.jetbrains:simple-icons:1.0.0")
 }
 
 tasks.withType<KotlinCompile> {
