@@ -14,7 +14,7 @@ open class ContinuousMark(startMark: Mark) : Mark {
         if ((marks.last().getPosition() - pos).getDistance() > 10) {
             val newMark = marks.last().clone()
             newMark.applyStroke(pos)
-            marks.add(newMark as SingleMark)
+            marks.add(newMark)
         }
     }
 
