@@ -84,7 +84,7 @@ compose is better. Nevertheless, the following is a semi-accurate list:
    
 4. Run the jar with java  
     ```bash
-    java -jar <download-location>/kanvas-1.0.jar
+    java -jar build/libs/kanvas-1.0.jar
     ```
 
 ### Authors
