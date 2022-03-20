@@ -43,6 +43,8 @@ compose is better. Nevertheless, the following is a semi-accurate list:
     ```bash
     java -jar build/libs/kanvas-1.0.jar
     ```
+### Presentation
+A presentation made by the authors of Kanvas can be found on Youtube [here](https://youtu.be/9xwezodGCM0). 
 
 ### Authors
 - Justen Di Ruscio
